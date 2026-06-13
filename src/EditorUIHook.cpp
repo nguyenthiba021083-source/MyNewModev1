@@ -12,7 +12,6 @@ public:
         if (!EditorUI::init(editorLayer))
             return false;
 
-        // Save editor for AI system
         EditorLayerBridge::editor = editorLayer;
 
         auto sprite =
@@ -32,8 +31,10 @@ public:
 
         btn->setPosition(ccp(-160.f, 90.f));
 
-        if (m_buttonMenu) {
-            m_buttonMenu->addChild(btn);
+        auto menu = this->getChildByType<CCMenu>(0);
+
+        if (menu) {
+            menu->addChild(btn);
         }
 
         log::info("AI Button Added");
@@ -44,9 +45,10 @@ public:
     void onAIButton(CCObject*) {
         log::info("Opening AI Menu");
 
-        auto menu = AIMenu::create();
-        if (menu) {
-            menu->show();
+        auto popup = AIMenu::create();
+
+        if (popup) {
+            popup->open();
         }
     }
 };
