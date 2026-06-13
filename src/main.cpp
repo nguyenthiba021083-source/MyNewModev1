@@ -2,12 +2,12 @@
 
 using namespace geode::prelude;
 
-$execute {
-    log::info("AI Level Generator Pro Loaded");
+$on_mod(Loaded) {
+    log::info("AI Level Generator Loaded");
 
     FLAlertLayer::create(
-        "AI Debug",
-        "Mod Loaded",
+        "AI Level Generator",
+        "Mod Loaded Successfully",
         "OK"
     )->show();
-    }
+}
