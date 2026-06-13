@@ -1,8 +1,8 @@
-#pragma once
+#include "AISystem.hpp"
+#include "LevelGenerator.hpp"
 
-#include <string>
-
-class AISystem {
-public:
-    static void generate(const std::string& prompt);
-};
+void AISystem::generate(
+    const std::string& prompt
+) {
+    LevelGenerator::generate(prompt);
+}
