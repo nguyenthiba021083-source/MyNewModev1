@@ -4,5 +4,5 @@
 
 class AISystem {
 public:
-    static void generate(const std::string& cmd);
+    static void generate(const std::string& prompt);
 };
