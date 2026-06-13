@@ -5,7 +5,7 @@
 
 using namespace geode::prelude;
 
-void AISystem::generate(std::string cmd) {
+void AISystem::generate(const std::string& cmd) {
     auto editor = EditorLayerBridge::editor;
 
     if (!editor) {
