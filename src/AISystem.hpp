@@ -1,3 +1,4 @@
+#pragma once
 #include "AISystem.hpp"
 #include "LevelGenerator.hpp"
 
