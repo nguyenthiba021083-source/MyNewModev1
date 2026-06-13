@@ -14,51 +14,41 @@ void AutoDecoEngine::decorate(
     auto editor = EditorLayerBridge::editor;
 
     if (!editor) {
-        log::error(
-            "AutoDecoEngine: Editor not found"
-        );
+        log::error("AutoDecoEngine: Editor not found");
         return;
     }
 
-    log::info(
-        "AutoDecoEngine started"
-    );
+    log::info("AutoDecoEngine started");
 
-    log::info(
-        "Theme = {}",
-        cfg.theme.name
-    );
+    switch (cfg.theme) {
+        case Theme::Basic:
+            log::info("Theme: Basic");
+            break;
 
-    //
-    // Future theme decoration system
-    //
+        case Theme::Modern:
+            log::info("Theme: Modern");
+            break;
 
-    if (cfg.theme == "default") {
-        log::info(
-            "Using default theme"
-        );
-    }
-    else if (cfg.theme == "modern") {
-        log::info(
-            "Using modern theme"
-        );
-    }
-    else if (cfg.theme == "hell") {
-        log::info(
-            "Using hell theme"
-        );
-    }
-    else if (cfg.theme == "space") {
-        log::info(
-            "Using space theme"
-        );
+        case Theme::Hell:
+            log::info("Theme: Hell");
+            break;
+
+        case Theme::Space:
+            log::info("Theme: Space");
+            break;
+
+        case Theme::Forest:
+            log::info("Theme: Forest");
+            break;
+
+        case Theme::Tech:
+            log::info("Theme: Tech");
+            break;
+
+        case Theme::NineCircles:
+            log::info("Theme: NineCircles");
+            break;
     }
 
-    //
-    // Future automatic decoration
-    //
-
-    log::info(
-        "AutoDecoEngine finished"
-    );
+    log::info("AutoDecoEngine finished");
 }
