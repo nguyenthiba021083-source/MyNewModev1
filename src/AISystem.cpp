@@ -2,6 +2,9 @@
 #include "EditorLayerBridge.hpp"
 
 #include <Geode/Geode.hpp>
+#include <Geode/binding/LevelEditorLayer.hpp>
+#include <Geode/binding/GameObject.hpp>
+
 #include <algorithm>
 
 using namespace geode::prelude;
@@ -20,14 +23,16 @@ void AISystem::generate(const std::string& prompt) {
         cmd.begin(),
         cmd.end(),
         cmd.begin(),
-        ::tolower
+        [](unsigned char c) {
+            return std::tolower(c);
+        }
     );
 
     if (cmd == "spike") {
+
         auto obj = editor->createObject(
             1,
-            cocos2d::CCPoint(100.f, 100.f),
-            false
+            cocos2d::CCPoint(100.f, 100.f)
         );
 
         if (obj) {
@@ -38,14 +43,15 @@ void AISystem::generate(const std::string& prompt) {
     }
 
     if (cmd == "10 spikes") {
+
         for (int i = 0; i < 10; i++) {
+
             auto obj = editor->createObject(
                 1,
                 cocos2d::CCPoint(
                     100.f + i * 30.f,
                     100.f
-                ),
-                false
+                )
             );
 
             if (obj) {
