@@ -1,8 +1,7 @@
 #pragma once
 
 #include <Geode/Geode.hpp>
-
-class LevelEditorLayer;
+#include <Geode/binding/LevelEditorLayer.hpp>
 
 class EditorLayerBridge {
 public:
