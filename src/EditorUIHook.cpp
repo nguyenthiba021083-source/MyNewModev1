@@ -14,20 +14,41 @@ public:
 
         EditorLayerBridge::editor = editorLayer;
 
-        FLAlertLayer::create(
-            "AI Debug",
-            "EditorUI Hook Loaded",
-            "OK"
-        )->show();
+        log::info("EditorUI Hook Loaded");
 
         auto sprite = CCSprite::createWithSpriteFrameName(
             "GJ_plusBtn_001.png"
         );
 
-        if (!sprite)
+        if (!sprite) {
+            log::error("Failed to create sprite");
             return true;
+        }
 
         auto btn = CCMenuItemSpriteExtra::create(
             sprite,
             this,
-            menu_selector(Editor
+            menu_selector(EditorUIHook::onAIButton)
+        );
+
+        btn->setPosition(ccp(-160.f, 90.f));
+
+        auto menu = this->getChildByType<CCMenu>(0);
+
+        if (menu) {
+            menu->addChild(btn);
+            log::info("AI Button Added");
+        }
+        else {
+            log::error("CCMenu not found");
+        }
+
+        return true;
+    }
+
+    void onAIButton(CCObject*) {
+        log::info("AI Button Pressed");
+
+        AIMenu::open();
+    }
+};
