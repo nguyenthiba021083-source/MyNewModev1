@@ -3,12 +3,12 @@
 
 #include <Geode/Geode.hpp>
 
-using namespace geode::prelude;
+using namespace geode::prelude::*;
 
 void AIMenu::open() {
     FLAlertLayer::create(
         "AI Generator",
-        "AI Menu test",
+        "AI Menu Loaded!",
         "OK"
     )->show();
 
