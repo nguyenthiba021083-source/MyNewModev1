@@ -12,22 +12,30 @@ public:
         if (!EditorUI::init(editorLayer))
             return false;
 
+        // Debug popup để kiểm tra hook có chạy không
+        FLAlertLayer::create(
+            "AI Debug",
+            "EditorUI Hook Loaded",
+            "OK"
+        )->show();
+
+        // Lưu EditorLayer cho AI System
         EditorLayerBridge::editor = editorLayer;
 
-        auto sprite =
-            CCSprite::createWithSpriteFrameName(
-                "GJ_plusBtn_001.png"
-            );
+        auto sprite = CCSprite::createWithSpriteFrameName(
+            "GJ_plusBtn_001.png"
+        );
 
-        if (!sprite)
+        if (!sprite) {
+            log::error("Failed to create AI button sprite");
             return true;
+        }
 
-        auto btn =
-            CCMenuItemSpriteExtra::create(
-                sprite,
-                this,
-                menu_selector(EditorUIHook::onAIButton)
-            );
+        auto btn = CCMenuItemSpriteExtra::create(
+            sprite,
+            this,
+            menu_selector(EditorUIHook::onAIButton)
+        );
 
         btn->setPosition(ccp(-160.f, 90.f));
 
@@ -35,10 +43,10 @@ public:
 
         if (menu) {
             menu->addChild(btn);
-            log::info("AI button added");
+            log::info("AI Button Added");
         }
         else {
-            log::error("CCMenu not found");
+            log::error("Could not find CCMenu");
         }
 
         return true;
