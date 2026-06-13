@@ -7,82 +7,82 @@
 using namespace geode::prelude;
 
 void AISystem::generate(const std::string& prompt) {
-    auto editor = EditorLayerBridge::editor;
+auto editor = EditorLayerBridge::editor;
 
-    if (!editor) {
-        log::error("Editor not found");
-        return;
-    }
+if (!editor) {
+    log::error("Editor not found");
+    return;
+}
 
-    std::string cmd = prompt;
+std::string cmd = prompt;
 
-    std::transform(
-        cmd.begin(),
-        cmd.end(),
-        cmd.begin(),
-        ::tolower
+std::transform(
+    cmd.begin(),
+    cmd.end(),
+    cmd.begin(),
+    ::tolower
+);
+
+if (cmd == "spike") {
+    auto obj = editor->createObject(
+        1,
+        cocos2d::CCPoint(100.f, 100.f),
+        false
     );
 
-    if (cmd == "spike") {
+    if (obj) {
+        editor->addObject(obj);
+        log::info("Spike created");
+    }
 
+    return;
+}
+
+if (cmd == "10 spikes") {
+    for (int i = 0; i < 10; i++) {
         auto obj = editor->createObject(
             1,
-            cocos2d::CCPoint(100.f, 100.f),
+            cocos2d::CCPoint(
+                100.f + i * 30.f,
+                100.f
+            ),
             false
         );
 
         if (obj) {
-            log::info("Spike created");
+            editor->addObject(obj);
         }
-
-        return;
     }
 
-    if (cmd == "10 spikes") {
+    log::info("10 spikes created");
+    return;
+}
 
-        for (int i = 0; i < 10; i++) {
+if (cmd == "cube") {
+    log::info("Generate cube section");
+    return;
+}
 
-            auto obj = editor->createObject(
-                1,
-                cocos2d::CCPoint(
-                    100.f + i * 30.f,
-                    100.f
-                ),
-                false
-            );
+if (cmd == "wave") {
+    log::info("Generate wave section");
+    return;
+}
 
-            if (obj) {
-                log::info("Spike {}", i);
-            }
-        }
+if (cmd == "ship") {
+    log::info("Generate ship section");
+    return;
+}
 
-        return;
-    }
+if (cmd == "portal") {
+    log::info("Generate portal");
+    return;
+}
 
-    if (cmd == "cube") {
-        log::info("Generate cube section");
-        return;
-    }
+if (cmd == "auto level") {
+    log::info("Generate auto level");
+    return;
+}
 
-    if (cmd == "wave") {
-        log::info("Generate wave section");
-        return;
-    }
+log::warn("Unknown command: {}", cmd);
 
-    if (cmd == "ship") {
-        log::info("Generate ship section");
-        return;
-    }
-
-    if (cmd == "portal") {
-        log::info("Generate portal");
-        return;
-    }
-
-    if (cmd == "auto level") {
-        log::info("Generate auto level");
-        return;
-    }
-
-    log::warn("Unknown command: {}", cmd);
 }
