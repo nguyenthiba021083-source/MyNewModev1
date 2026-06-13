@@ -4,7 +4,7 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/EditorUI.hpp>
 
-using namespace geode::prelude::*;
+using namespace geode::prelude;
 
 class $modify(EditorUIHook, EditorUI) {
 public:
@@ -12,15 +12,22 @@ public:
         if (!EditorUI::init(editorLayer))
             return false;
 
+        // Debug popup để kiểm tra hook có chạy không
+        FLAlertLayer::create(
+            "AI Debug",
+            "EditorUI Hook Loaded",
+            "OK"
+        )->show();
+
+        // Lưu EditorLayer cho AI System
         EditorLayerBridge::editor = editorLayer;
 
-        log::info("EditorUI Hook Loaded");
-
-        auto sprite =
-            CCSprite::createWithSpriteFrameName("GJ_plusBtn_001.png");
+        auto sprite = CCSprite::createWithSpriteFrameName(
+            "GJ_plusBtn_001.png"
+        );
 
         if (!sprite) {
-            log::error("Failed to create sprite");
+            log::error("Failed to create AI button sprite");
             return true;
         }
 
@@ -30,29 +37,22 @@ public:
             menu_selector(EditorUIHook::onAIButton)
         );
 
-        if (!btn) {
-            log::error("Failed to create button");
-            return true;
-        }
+        btn->setPosition(ccp(-160.f, 90.f));
 
-        btn->setScale(0.9f);
+        auto menu = this->getChildByType<CCMenu>(0);
 
-        if (m_toolbarMenu) {
-            m_toolbarMenu->addChild(btn);
-
-            btn->setPosition({-170.f, 90.f});
-
+        if (menu) {
+            menu->addChild(btn);
             log::info("AI Button Added");
         }
         else {
-            log::error("m_toolbarMenu is null");
+            log::error("Could not find CCMenu");
         }
 
         return true;
     }
 
     void onAIButton(CCObject*) {
-        log::info("AI Button Pressed");
         AIMenu::open();
     }
 };
