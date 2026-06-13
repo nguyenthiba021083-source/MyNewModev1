@@ -1,0 +1,17 @@
+{
+"geode": "5.7.1",
+"gd": {
+"win": "2.2081",
+"android": "2.2081",
+"mac": "2.2081",
+"ios": "2.2081"
+},
+"id": "nguyen-thi-ba.ai-level-generator-pro",
+"name": "AI Level Generator Pro",
+"version": "v1.0.0",
+"developer": "Nguyen Thi Ba",
+"description": "AI-powered Geometry Dash level generator",
+"dependencies": {
+"geode.node-ids": ">=v1.23.3"
+}
+}
