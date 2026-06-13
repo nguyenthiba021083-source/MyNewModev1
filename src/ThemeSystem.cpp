@@ -1,60 +1,64 @@
 #include "ThemeSystem.hpp"
 #include "ObjectDatabase.hpp"
 
-int ThemeSystem::getBlockID(Theme theme) {
+int ThemeSystem::getBlockID(
+    Theme theme
+) {
     switch (theme) {
 
         case Theme::Basic:
-            return ObjectDatabase::BLOCK_BASIC;
+            return ObjectDB::BLOCK;
 
         case Theme::Modern:
-            return ObjectDatabase::BLOCK_MODERN;
+            return ObjectDB::BLOCK;
 
         case Theme::Hell:
-            return ObjectDatabase::BLOCK_HELL;
+            return ObjectDB::BLOCK;
 
         case Theme::Space:
-            return ObjectDatabase::BLOCK_SPACE;
+            return ObjectDB::BLOCK;
 
         case Theme::Forest:
-            return ObjectDatabase::BLOCK_FOREST;
+            return ObjectDB::BLOCK;
 
         case Theme::Tech:
-            return ObjectDatabase::BLOCK_TECH;
+            return ObjectDB::BLOCK;
 
         case Theme::NineCircles:
-            return ObjectDatabase::BLOCK_NINECIRCLES;
+            return ObjectDB::BLOCK;
 
         default:
-            return ObjectDatabase::BLOCK_BASIC;
+            return ObjectDB::BLOCK;
     }
 }
 
-int ThemeSystem::getGlowID(Theme theme) {
+int ThemeSystem::getGlowID(
+    Theme theme
+) {
     switch (theme) {
 
         case Theme::Basic:
-            return ObjectDatabase::GLOW_BASIC;
+            return ObjectDB::GLOW;
 
         case Theme::Modern:
-            return ObjectDatabase::GLOW_MODERN;
+            return ObjectDB::GLOW;
 
         case Theme::Hell:
-            return ObjectDatabase::GLOW_HELL;
+            return ObjectDB::GLOW;
 
         case Theme::Space:
-            return ObjectDatabase::GLOW_SPACE;
+            return ObjectDB::GLOW;
 
         case Theme::Forest:
-            return ObjectDatabase::GLOW_FOREST;
+            return ObjectDB::GLOW;
 
         case Theme::Tech:
-            return ObjectDatabase::GLOW_TECH;
+            return ObjectDB::GLOW;
 
         case Theme::NineCircles:
-            return ObjectDatabase::GLOW_NINECIRCLES;
+            return ObjectDB::GLOW;
 
         default:
-            return ObjectDatabase::GLOW_BASIC;
+            return ObjectDB::GLOW;
     }
 }
