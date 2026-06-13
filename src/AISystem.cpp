@@ -2,9 +2,6 @@
 #include "EditorLayerBridge.hpp"
 
 #include <Geode/Geode.hpp>
-#include <Geode/binding/LevelEditorLayer.hpp>
-#include <Geode/binding/GameObject.hpp>
-
 #include <algorithm>
 
 using namespace geode::prelude;
@@ -23,16 +20,15 @@ void AISystem::generate(const std::string& prompt) {
         cmd.begin(),
         cmd.end(),
         cmd.begin(),
-        [](unsigned char c) {
-            return std::tolower(c);
-        }
+        ::tolower
     );
 
     if (cmd == "spike") {
 
         auto obj = editor->createObject(
             1,
-            cocos2d::CCPoint(100.f, 100.f)
+            cocos2d::CCPoint(100.f, 100.f),
+            false
         );
 
         if (obj) {
@@ -51,7 +47,8 @@ void AISystem::generate(const std::string& prompt) {
                 cocos2d::CCPoint(
                     100.f + i * 30.f,
                     100.f
-                )
+                ),
+                false
             );
 
             if (obj) {
@@ -59,6 +56,31 @@ void AISystem::generate(const std::string& prompt) {
             }
         }
 
+        return;
+    }
+
+    if (cmd == "cube") {
+        log::info("Generate cube section");
+        return;
+    }
+
+    if (cmd == "wave") {
+        log::info("Generate wave section");
+        return;
+    }
+
+    if (cmd == "ship") {
+        log::info("Generate ship section");
+        return;
+    }
+
+    if (cmd == "portal") {
+        log::info("Generate portal");
+        return;
+    }
+
+    if (cmd == "auto level") {
+        log::info("Generate auto level");
         return;
     }
 
