@@ -65,5 +65,20 @@ AIMenu* AIMenu::create() {
     }
 
     delete ret;
-    return nullptr;
+    return nullptr;}
+void AIMenu::onGenerate(CCObject*) {
+    if (!s_input)
+        return;
+
+    auto text = s_input->getString();
+
+    AISystem::generate(text);
+
+    FLAlertLayer::create(
+        "AI Generator",
+        "Command executed",
+        "OK"
+    )->show();
+
+    this->onClose(nullptr);
 }

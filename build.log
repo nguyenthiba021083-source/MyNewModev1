@@ -1,0 +1,114 @@
+CMake Deprecation Warning at /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  build-android64/CMakeFiles/4.3.3/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:11 (project)
+
+
+CMake Deprecation Warning at /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  build-android64/CMakeFiles/4.3.3/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:11 (project)
+
+
+-- The C compiler identification is unknown
+-- The CXX compiler identification is unknown
+-- Detecting C compiler ABI info
+CMake Deprecation Warning at /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/4.3.3/CMakeSystem.cmake:6 (include)
+  /data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/CMakeScratch/TryCompile-XCtMyu/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  /data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/4.3.3/CMakeSystem.cmake:6 (include)
+  /data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/CMakeScratch/TryCompile-XCtMyu/CMakeLists.txt:3 (project)
+
+
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/toolchains/llvm/prebuilt/bin/clang
+CMake Deprecation Warning at /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/4.3.3/CMakeSystem.cmake:6 (include)
+  /data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/CMakeScratch/TryCompile-sbfyEs/CMakeLists.txt:3 (project)
+
+
+CMake Deprecation Warning at /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/build/cmake/android-legacy.toolchain.cmake:35 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/build/cmake/android.toolchain.cmake:55 (include)
+  /data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/4.3.3/CMakeSystem.cmake:6 (include)
+  /data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/CMakeScratch/TryCompile-sbfyEs/CMakeLists.txt:3 (project)
+
+
+-- Check for working C compiler: /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/toolchains/llvm/prebuilt/bin/clang - broken
+CMake Error at /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "/data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/toolchains/llvm/prebuilt/bin/clang"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: '/data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/CMakeScratch/TryCompile-sbfyEs'
+    
+    Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /data/data/com.termux/files/usr/bin/make -f Makefile cmTC_419a1/fast
+    /data/data/com.termux/files/usr/bin/make  -f CMakeFiles/cmTC_419a1.dir/build.make CMakeFiles/cmTC_419a1.dir/build
+    make[1]: Entering directory '/data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/CMakeScratch/TryCompile-sbfyEs'
+    Building C object CMakeFiles/cmTC_419a1.dir/testCCompiler.c.o
+    /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/toolchains/llvm/prebuilt/bin/clang   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -o CMakeFiles/cmTC_419a1.dir/testCCompiler.c.o -c /data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/CMakeScratch/TryCompile-sbfyEs/testCCompiler.c
+    /data/data/com.termux/files/home/android-sdk/ndk/android-ndk-r27c/toolchains/llvm/prebuilt/bin/clang: 1: Syntax error: "(" unexpected
+    make[1]: *** [CMakeFiles/cmTC_419a1.dir/build.make:81: CMakeFiles/cmTC_419a1.dir/testCCompiler.c.o] Error 2
+    make[1]: Leaving directory '/data/data/com.termux/files/home/AI-Level-Editor/MyNewMod/build-android64/CMakeFiles/CMakeScratch/TryCompile-sbfyEs'
+    make: *** [Makefile:134: cmTC_419a1/fast] Error 2
+    
+    
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:11 (project)
+
+
+-- Configuring incomplete, errors occurred!
+| Fail | CMake returned code 1
+| Info | Tip: deleting the build folder might help :-)
