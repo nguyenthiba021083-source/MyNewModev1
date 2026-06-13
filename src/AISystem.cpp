@@ -5,7 +5,7 @@
 
 using namespace geode::prelude;
 
-void AISystem::generate(const std::string& cmd) {
+void AISystem::generate(const std::string& prompt) {
     auto editor = EditorLayerBridge::editor;
 
     if (!editor) {
@@ -13,7 +13,7 @@ void AISystem::generate(const std::string& cmd) {
         return;
     }
 
-    if (cmd == "spike") {
+    if (prompt == "spike") {
         auto obj = editor->createObject(
             1,
             cocos2d::CCPoint(100.f, 100.f),
@@ -27,7 +27,7 @@ void AISystem::generate(const std::string& cmd) {
         return;
     }
 
-    if (cmd == "10 spikes") {
+    if (prompt == "10 spikes") {
         for (int i = 0; i < 10; i++) {
             auto obj = editor->createObject(
                 1,
@@ -46,6 +46,4 @@ void AISystem::generate(const std::string& cmd) {
         log::info("10 spikes created");
         return;
     }
-
-    log::info("Unknown command: {}", cmd);
 }
