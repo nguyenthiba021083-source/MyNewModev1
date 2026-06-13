@@ -26,9 +26,11 @@ public:
         }
 
         auto btn = CCMenuItemSpriteExtra::create(
-            sprite,
-            this,
-            menu_selector(EditorUIHook::onAIButton)
+            FLAlertLayer::create(
+    "AI Debug",
+    "Button Created",
+    "OK"
+)->show();
         );
 
         btn->setPosition(ccp(-160.f, 90.f));
