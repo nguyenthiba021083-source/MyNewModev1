@@ -35,9 +35,11 @@ public:
 
         if (menu) {
             menu->addChild(btn);
+            log::info("AI button added");
         }
-
-        log::info("AI Button Added");
+        else {
+            log::error("CCMenu not found");
+        }
 
         return true;
     }
