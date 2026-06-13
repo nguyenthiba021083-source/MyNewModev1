@@ -1,10 +1,8 @@
 #pragma once
 
-#include <string>
+#include "LevelConfig.hpp"
 
 class LevelGenerator {
 public:
-    static void generate(
-        const std::string& prompt
-    );
+    static void generate(const LevelConfig& cfg);
 };
