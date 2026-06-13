@@ -21,28 +21,85 @@ void AISystem::generate(std::string prompt) {
         ::tolower
     );
 
+    // Spike
     if (prompt == "spike") {
-        log::info("Generate spike");
+
+        auto obj = editor->createObject(
+            1,                      // Spike ID
+            cocos2d::CCPoint(100.f, 100.f)
+        );
+
+        if (obj) {
+            editor->addObject(obj);
+            log::info("Placed spike");
+        }
+
+        return;
     }
-    else if (prompt == "10 spikes") {
-        log::info("Generate 10 spikes");
+
+    // 10 spikes
+    if (prompt == "10 spikes") {
+
+        for (int i = 0; i < 10; i++) {
+
+            auto obj = editor->createObject(
+                1,
+                cocos2d::CCPoint(
+                    100.f + i * 30.f,
+                    100.f
+                )
+            );
+
+            if (obj) {
+                editor->addObject(obj);
+            }
+        }
+
+        log::info("Placed 10 spikes");
+        return;
     }
-    else if (prompt == "cube") {
-        log::info("Generate cube section");
+
+    // Portal
+    if (prompt == "portal") {
+
+        auto obj = editor->createObject(
+            12,                     // Cube portal
+            cocos2d::CCPoint(200.f, 100.f)
+        );
+
+        if (obj) {
+            editor->addObject(obj);
+        }
+
+        log::info("Placed portal");
+        return;
     }
-    else if (prompt == "wave") {
-        log::info("Generate wave section");
+
+    // Cube section
+    if (prompt == "cube") {
+
+        for (int i = 0; i < 20; i++) {
+
+            auto block = editor->createObject(
+                1,
+                cocos2d::CCPoint(
+                    100.f + i * 30.f,
+                    60.f
+                )
+            );
+
+            if (block) {
+                editor->addObject(block);
+            }
+        }
+
+        log::info("Generated cube section");
+        return;
     }
-    else if (prompt == "ship") {
-        log::info("Generate ship section");
-    }
-    else if (prompt == "portal") {
-        log::info("Generate portal");
-    }
-    else if (prompt == "auto level") {
-        log::info("Generate auto level");
-    }
-    else {
-        log::warn("Unknown command");
-    }
-}
+
+    // Wave
+    if (prompt == "wave") {
+
+        auto portal = editor->createObject(
+            660,                    // Wave portal
+            cocos2d::CCPoint(150.f, 100.f
