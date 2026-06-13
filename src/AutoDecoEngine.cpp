@@ -26,7 +26,7 @@ void AutoDecoEngine::decorate(
 
     log::info(
         "Theme = {}",
-        cfg.theme
+        cfg.theme.name
     );
 
     //
