@@ -4,5 +4,5 @@
 
 class IdeaGenerator {
 public:
-    static std::string generateIdea(const std::string& prompt);
+    static std::string generate(const std::string& prompt);
 };
