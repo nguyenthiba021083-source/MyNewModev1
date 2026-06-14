@@ -20,11 +20,6 @@ void LevelGenerator::generate(
     if (!obj)
         return;
 
-    editor->addObject(obj);
-
-    editor->updateVisibility();
-
-    editor->updateObjectInfoLabel();
-
-    editor->updateEditorMode();
+    // TODO:
+    // Thêm object vào level bằng API GD 2.208
 }
