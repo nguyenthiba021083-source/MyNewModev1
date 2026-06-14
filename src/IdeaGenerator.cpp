@@ -1,18 +1,17 @@
 #include "IdeaGenerator.hpp"
 
-std::string IdeaGenerator::generateIdea(const std::string& prompt) {
-
+std::string IdeaGenerator::generate(const std::string& prompt) {
     if (prompt == "hell") {
-        return "Hell theme with red colors and spikes";
+        return "Hell theme";
     }
 
     if (prompt == "space") {
-        return "Space theme with glow objects";
+        return "Space theme";
     }
 
-    if (prompt == "forest") {
-        return "Forest theme with green decorations";
+    if (prompt == "water") {
+        return "Water theme";
     }
 
-    return "Default Geometry Dash level";
+    return "Default level";
 }
