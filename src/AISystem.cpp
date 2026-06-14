@@ -3,6 +3,5 @@
 
 std::string AISystem::processPrompt(const std::string& prompt) {
     std::string idea = IdeaGenerator::generate(prompt);
-
     return idea;
 }
