@@ -2,7 +2,6 @@
 
 using namespace geode::prelude;
 
-void LevelGenerator::generate(
     const LevelConfig& cfg
 ) {
     auto editor = EditorLayerBridge::editor;
