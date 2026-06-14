@@ -12,8 +12,8 @@ void LevelGenerator::generate(
         return;
 
     auto obj = editor->createObject(
-        1,
-        {100.f, 100.f},
+        8,
+        CCPoint(100.f, 100.f),
         false
     );
 
@@ -23,4 +23,8 @@ void LevelGenerator::generate(
     editor->addObject(obj);
 
     editor->updateVisibility();
+
+    editor->updateObjectInfoLabel();
+
+    editor->updateEditorMode();
 }
