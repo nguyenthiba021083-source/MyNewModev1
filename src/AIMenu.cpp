@@ -6,11 +6,7 @@
 using namespace geode::prelude;
 
 void AIMenu::open() {
-    FLAlertLayer::create(
-        "AI Generator",
-        "Testing AI...\nAutomatically generating spike.",
-        "OK"
-    )->show();
+    log::info("AI Menu Opened");
 
     AISystem::generate("spike");
 }
