@@ -1,13 +1,8 @@
-#include "LevelGenerator.hpp"
-#include "PatternGenerator.hpp"
-#include "AutoDecoEngine.hpp"
+#include "EditorLayerBridge.hpp"
 
-void LevelGenerator::generate(
-    const LevelConfig& cfg
-) {
-    PatternGenerator::generate(cfg);
+auto editor = EditorLayerBridge::editor;
 
-    if (cfg.autoDeco) {
-        AutoDecoEngine::decorate(cfg);
-    }
+if (editor) {
+    auto obj = editor->createObject(8, {150.f, 90.f}, false);
+    editor->addObject(obj);
 }
