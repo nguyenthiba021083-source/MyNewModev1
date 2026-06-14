@@ -1,12 +1,8 @@
 #include "AISystem.hpp"
-#include "LevelGenerator.hpp"
-#include "PromptParser.hpp"
+#include "IdeaGenerator.hpp"
 
-void AISystem::generate(
-    const std::string& prompt
-) {
-    LevelConfig cfg =
-        PromptParser::parse(prompt);
+std::string AISystem::processPrompt(const std::string& prompt) {
+    std::string idea = IdeaGenerator::generate(prompt);
 
-    LevelGenerator::generate(cfg);
+    return idea;
 }
